@@ -7,9 +7,66 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <style>
+      #not-found {
+        display: none;
+      }
+      #spinning {
+        display: none;
+      }
+    </style>
     <title>Phone Arena</title>
   </head>
   <body>
+    <main class="mx-5 my-5">
+      <!-- Searching section start-->
+      <section>
+        <h3 class="text-info text-center">Explore Latest Phones</h3>
+        <div class="input-group mb-3 mt-3 w-50 mx-auto">
+          <input
+            type="text"
+            id="input-search"
+            class="form-control"
+            placeholder="Search phones"
+            aria-label="Phone search"
+            aria-describedby="button-addon2"
+          />
+          <button
+            class="btn btn-outline-success btn-dark text-white"
+            type="button"
+            id="button-search"
+            onclick="loadSearchResult()"
+          >
+            Search
+          </button>
+        </div>
+      </section>
+      <!-- Searching section end*** -->
+
+      <!--  Spinning while load data start -->
+      <section id="spinning" class="mt-5">
+        <div class="d-flex justify-content-center">
+          <div class="spinner-grow alert-primary" role="status"></div>
+          <div class="spinner-grow mx-2 alert-primary" role="status"></div>
+          <div class="spinner-grow alert-primary" role="status"></div>
+        </div>
+      </section>
+      <!--  Spinning while load data end*** -->
+
+      <!-- Section for Search results showing start-->
+
+      <!-- Not found start-->
+      <section id="not-found">
+        <h4 class="text-center text-danger mt-4">No Phone found</h4>
+      </section>
+      <!-- Not found end***-->
+
+      <section
+        id="display-section"
+        class="row row-cols-1 row-cols-md-3 mt-3 g-4"
+      ></section>
+    </main>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
