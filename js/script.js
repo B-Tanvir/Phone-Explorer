@@ -5,6 +5,8 @@ const loadSearchResult = () => {
   const displaySection = document.querySelector("#display-section");
   const searchText = inputField.value;
   displaySection.textContent = "";
+  const detailsSection = document.getElementById("details");
+  detailsSection.textContent = "";
   inputField.value = "";
   const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
 
@@ -47,9 +49,10 @@ const loadSearchResult = () => {
           count++;
         }
       });
+    } else {
+      controlDisplayProperty("not-found", "block");
     }
     controlDisplayProperty("spinning", "none");
-    controlDisplayProperty("not-found", "block");
   }
 };
 
@@ -82,8 +85,8 @@ const exploreDetails = (id) => {
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">Display: ${mainFeatures.displaySize}</li>
-            <li class="list-group-item">Release data: ${releaseDate}</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Release date: ${releaseDate}</li>
+            <li class="list-group-item">Memory: ${mainFeatures.memory}</li>
             <li class="list-group-item">Chipset: ${mainFeatures.chipSet}</li>
             <li class="list-group-item">Storage: ${mainFeatures.storage}</li>
           </ul>
